@@ -131,7 +131,10 @@ def main(beta=1, check_conf=False):
         "bond_ids": bond_ids,
     }
     
-    with open(os.path.join(data_save_dir, 'params.pkl'), 'wb') as f:
+    # with open(os.path.join(data_save_dir, 'params.pkl'), 'wb') as f:
+    #     pickle.dump(params, f)
+    
+    with open(os.path.join('params.pkl'), 'wb') as f:
         pickle.dump(params, f)
     
     # Run the simulation
@@ -144,7 +147,7 @@ def main(beta=1, check_conf=False):
     tstart = 0
     trun = 2.0; 0.2
     
-    sim = PolyStokes.PolyStokes(dt, samplerate, tmax, data_config_dir)
+    sim = PolyStokes.PolyStokes(dt, samplerate, tmax, data_config_dir, mm_HI=False)
     
     sim.particle_info(
         Np, 

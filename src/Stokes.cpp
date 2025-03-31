@@ -8,8 +8,8 @@ using namespace arrays;
 // Initializes the PolyStokes class and defines various constants and parameters
 // for the calculations
 
-PolyStokes::PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir)
-    : dt(dt), samplerate(samplerate), tmax(tmax), output_dir(output_dir)
+PolyStokes::PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir, bool mm_HI)
+    : dt(dt), samplerate(samplerate), tmax(tmax), output_dir(output_dir), mm_HI(mm_HI)
 {
     timeinfo.t = 0.0;
     timeinfo.dt = dt;

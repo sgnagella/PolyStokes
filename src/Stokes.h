@@ -10,7 +10,7 @@
 
 class PolyStokes {
 public:
-    PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir);
+    PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir, bool mm_HI=true);
     ~PolyStokes();
     void initial_configuration(pybind11::array_t<double> init_x0);
     void particle_info(int Np, int Nc, int Nm, int Npoly, int Nmono_per_chain, double beta, double kbond, double r0, double Lmax, double tau);
@@ -22,6 +22,7 @@ private:
     int samplerate;
     double tmax;
     std::string output_dir;
+    bool mm_HI; // whether to include monomer-monomer HI
 
     Consts consts;
     Coeffs coeffs;

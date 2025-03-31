@@ -27,9 +27,9 @@ void PolyStokes::cleanup(){
     PetscInitialized(&petsc_initialized);
     PetscFinalized(&petsc_finalized);
 
-    if (petsc_initialized && !petsc_finalized) {
-        PetscFinalize();
-    }
+    // if (petsc_initialized && !petsc_finalized) {
+    //     PetscFinalize();
+    // }
     std::cout << "Cleanup complete" << std::endl;
     return;
 }

@@ -634,32 +634,35 @@ void PolyStokes::mob(){
 
     // Fill in pair mobility terms
     // Monomer-monomer interactions
-    for( kk = 0; kk < npair_AA; kk++){
-        pidx = id_AA[kk];
-        mobility( pd[3][pidx], pd[4][pidx] , pd[0][pidx] , pd[1][pidx] , pd[2][pidx] , false, false, true); 
-        
-        ph1 = ndim * id[0][pidx]; 
-        ph2 = ndim * id[1][pidx];
-
-        for( ii = 0; ii < ndim ; ii++ ){
-
-            for( jj = 0; jj < ndim; jj++ ){ 
-
-                IDX1 = ph1 + ii;
-                IDX2 = ph2 + jj;
-                VALA = (PetscScalar)mob_a[ii][jj];
-                // std::cout << "IDX1 " << IDX1 << " IDX2 " << IDX2 << " mob_a VALA " << VALA << std::endl;
-                ierr = MatSetValues(A, 1, &IDX1, 1, &IDX2, &VALA, INSERT_VALUES); CHKERRV(ierr);
-
-                IDX1 = ph2 + ii; 
-                IDX2 = ph1 + jj;
-                VALA = (PetscScalar)mob_a[jj][ii];
-                // std::cout << "IDX1 " << IDX1 << " IDX2 " << IDX2 << " mob_a VALA " << VALA << std::endl;
-                ierr = MatSetValues(A, 1, &IDX1, 1, &IDX2, &VALA, INSERT_VALUES); CHKERRV(ierr);
+    if(mm_HI){
+        // std::cout<< "Applying monomer-monomer HI" << std::endl;
+        for( kk = 0; kk < npair_AA; kk++){
+            pidx = id_AA[kk];
+            mobility( pd[3][pidx], pd[4][pidx] , pd[0][pidx] , pd[1][pidx] , pd[2][pidx] , false, false, true); 
+            
+            ph1 = ndim * id[0][pidx]; 
+            ph2 = ndim * id[1][pidx];
+    
+            for( ii = 0; ii < ndim ; ii++ ){
+    
+                for( jj = 0; jj < ndim; jj++ ){ 
+    
+                    IDX1 = ph1 + ii;
+                    IDX2 = ph2 + jj;
+                    VALA = (PetscScalar)mob_a[ii][jj];
+                    // std::cout << "IDX1 " << IDX1 << " IDX2 " << IDX2 << " mob_a VALA " << VALA << std::endl;
+                    ierr = MatSetValues(A, 1, &IDX1, 1, &IDX2, &VALA, INSERT_VALUES); CHKERRV(ierr);
+    
+                    IDX1 = ph2 + ii; 
+                    IDX2 = ph1 + jj;
+                    VALA = (PetscScalar)mob_a[jj][ii];
+                    // std::cout << "IDX1 " << IDX1 << " IDX2 " << IDX2 << " mob_a VALA " << VALA << std::endl;
+                    ierr = MatSetValues(A, 1, &IDX1, 1, &IDX2, &VALA, INSERT_VALUES); CHKERRV(ierr);
+                }
             }
         }
     }
-
+    
     // Monomer-colloid interactions
     for( kk = 0; kk < npair_AB ; kk++){
         pidx = id_AB[kk];
