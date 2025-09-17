@@ -72,3 +72,52 @@ void PolyStokes::write_quaternions(){
     }
     return;
 }
+
+void PolyStokes::write_forces(){
+    // Write the configuration of the particles to a file
+    std::ostringstream oss;
+    double& t = timeinfo.t;
+    double time; 
+    int i, i3, i3p3;
+    int& Nm = pinfo.Nm;
+    int& Nc = pinfo.Nc;
+    int& Np = pinfo.Np;
+    int& ndim = consts.ndim;
+    int& n3 = consts.n3;
+    memcpy(&time, &t, sizeof(double));
+    oss << output_dir << "/force_" <<  time << "_.txt"; 
+    std::string filename_str = oss.str();
+    const char* filename = filename_str.c_str();
+    FILE* file; 
+    file = fopen(filename, "w");
+
+    if (file != NULL){
+        // Write monomer + colloid forces
+        for(i = 0; i < Np; i++){
+            i3 = ndim * i; 
+            fprintf(file, "%.10f", fext[i3]);
+            fprintf(file, "\t");
+            fprintf(file, "%.10f", fext[i3 + 1]);
+            fprintf(file, "\t");
+            fprintf(file, "%.10f", fext[i3 + 2]);
+            fprintf(file, "\n");
+        }
+
+        // Write colloid torques
+        for(i = 0; i < Nc; i++){
+            i3 = n3 + ndim * i;  
+            fprintf(file, "%.10f", fext[i3]);
+            fprintf(file, "\t");
+            fprintf(file, "%.10f", fext[i3 + 1]);
+            fprintf(file, "\t");
+            fprintf(file, "%.10f", fext[i3 + 2]);
+            fprintf(file, "\n");
+        }
+        fclose(file);
+
+    }   
+    else{
+        std::cerr << "Error: Could not open the file for writing in write_configuration." << std::endl;
+    }
+    return;
+}

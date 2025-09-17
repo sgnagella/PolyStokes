@@ -637,11 +637,38 @@ void PolyStokes::mob(){
     if(mm_HI){
         // std::cout<< "Applying monomer-monomer HI" << std::endl;
         for( kk = 0; kk < npair_AA; kk++){
-            pidx = id_AA[kk];
+
+            // If only considering inter-chain monomer HI
+            // Check the pair belongs to different chains
+            if(chain_HI && id_AA[kk][1]){
+                continue;
+            }
+
+            pidx = id_AA[kk][0];
+            ph1 = id[0][pidx];
+            ph2 = id[1][pidx];
+            
+            // If only considering chain-chain HI
+            // Pair mobility interaction is 0 for monomers of the same chain
+            // if(chain_HI && (chain_ids[ph1] == chain_ids[ph2])){
+            //     continue;
+            // }
+
             mobility( pd[3][pidx], pd[4][pidx] , pd[0][pidx] , pd[1][pidx] , pd[2][pidx] , false, false, true); 
             
-            ph1 = ndim * id[0][pidx]; 
-            ph2 = ndim * id[1][pidx];
+            // TODO: account for only chain-chain HI 
+            // along the lines of 
+            // chain_id_1 = cid[id[0][pidx]]
+            // chain_id_2 = cid[id[0][pidx]]
+            // cid is size(N_mono_total) array
+            // each monomer is assigned to a chain
+            // if chain_id_1 == chain_id_2 -> continue
+
+            // ph1 = ndim * id[0][pidx]; 
+            // ph2 = ndim * id[1][pidx];
+
+            ph1 *= ndim;
+            ph2 *= ndim;
     
             for( ii = 0; ii < ndim ; ii++ ){
     

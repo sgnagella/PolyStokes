@@ -34,7 +34,7 @@ FIG_WIDTH = 5 # inches
 FIG_HEIGHT = FIG_WIDTH/ASPECT_RATIO
 MARKEREDGEWIDTH = 1
 
-def main(T=2.0, save_to_beta_dir=False):
+def main(T=0.01, save_to_beta_dir=False):
     """
         T indicates the period of revolution of the moving particle 
     """
@@ -96,13 +96,13 @@ def main(T=2.0, save_to_beta_dir=False):
         # Print the % recovery of the angle from maximum displacement by the final timestep recorded
         t_end_record = 1; 0.6
         tol = 1e-6
-        stop_displacement = float( central_particle_azimuth[np.abs(times - T)<tol] )
-        print(stop_displacement)
-        # np.max(central_particle_azimuth[times<t_end_record])
-        tend_idx = -1; 
-        print(central_particle_azimuth[-1])
-        recovery = 100 * float((central_particle_azimuth[tend_idx] - stop_displacement)/stop_displacement )
-        print(f'For beta = {beta:.2f}, the central particle azimuthal angle recovered {recovery:.2f}% of the maximum displacement')
+        # stop_displacement = float( central_particle_azimuth[np.abs(times - T)<tol] )
+        # print(stop_displacement)
+        # # np.max(central_particle_azimuth[times<t_end_record])
+        # tend_idx = -1; 
+        # print(central_particle_azimuth[-1])
+        # recovery = 100 * float((central_particle_azimuth[tend_idx] - stop_displacement)/stop_displacement )
+        # print(f'For beta = {beta:.2f}, the central particle azimuthal angle recovered {recovery:.2f}% of the maximum displacement')
 
         # Save the data
         np.save(f'{save_dir}/central_particle_azimuth_times_T_{T}.npy', times)

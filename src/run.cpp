@@ -54,6 +54,7 @@ void PolyStokes::run(){
         
     init();
     std::cout << "Initialization complete \n\n" << std::endl;
+    // return;
 
     // Fill saddle point matrix with the self-interactions
     fill_self();
@@ -105,6 +106,10 @@ void PolyStokes::run(){
             std::cout << "Time " << timeinfo.t << std::endl;
             write_configuration();
             write_quaternions();
+
+            if(record_forces){
+                write_forces();
+            }
         }
         // std::cout << "\n" << std::endl;
     }

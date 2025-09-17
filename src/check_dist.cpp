@@ -10,13 +10,19 @@ using namespace arrays;
 
 void PolyStokes::check_dist(){
     // Declare variables 
-    int ii , jj , kk, k3, j3, type_id; 
+    int ii , jj , kk, k3, j3, type_id;
+    int& kk_AB = id_AB[0]; 
     double dx, dy, dz, dr, dr_inv, dst, dst_inv, rverl;
     
     std::vector<float> &rverls = dataStruct.rverls;
     for( ii = 0; ii < (pinfo.Np-1); ii++ ){ vlist[ii].clear(); }
 
     for(ii = 0; ii < pinfo.npair; ii++){
+
+        // Ignore dist checks if we are neglect monomer-monomer HI
+        if( !mm_HI && ii < kk_AB ){
+            continue;
+        }
 
         kk = id[0][ii]; 
         jj = id[1][ii];

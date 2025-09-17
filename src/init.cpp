@@ -43,29 +43,36 @@ void PolyStokes::init_solver(){
 
     // uncomment to use custom preconditioner
     std::cout << "Preconditioner set" << std::endl;
-    // Detect saddle point structure
     ierr = PCSetType(pc, PCFIELDSPLIT); CHKERRV(ierr);
-    ierr = PCFieldSplitSetDetectSaddlePoint(pc, PETSC_TRUE); CHKERRV(ierr);
 
-    // uncomment below to use explicit shcur field splitting 
-    // IS is_F, is_V; 
+    if(mm_HI){
+        // uncomment below to use explicit shcur field splitting 
+        IS is_F, is_V; 
 
-    // PetscInt idxf[consts.nm3nc11];
-    // PetscInt idxvel[consts.nm3nc6];
+        PetscInt idxf[consts.nm3nc11];
+        PetscInt idxvel[consts.nm3nc6];
 
-    // std::iota(idxf, idxf + consts.nm3nc11, 0);
-    // std::iota(idxvel, idxvel + consts.nm3nc6, consts.nm3nc11);
-    // ierr = ISCreateGeneral(PETSC_COMM_WORLD, consts.nm3nc11, idxf, PETSC_COPY_VALUES, &is_F); CHKERRV(ierr);
-    // ierr = ISCreateGeneral(PETSC_COMM_WORLD, consts.nm3nc6, idxvel, PETSC_COPY_VALUES, &is_V); CHKERRV(ierr);
+        std::iota(idxf, idxf + consts.nm3nc11, 0);
+        std::iota(idxvel, idxvel + consts.nm3nc6, consts.nm3nc11);
+        ierr = ISCreateGeneral(PETSC_COMM_WORLD, consts.nm3nc11, idxf, PETSC_COPY_VALUES, &is_F); CHKERRV(ierr);
+        ierr = ISCreateGeneral(PETSC_COMM_WORLD, consts.nm3nc6, idxvel, PETSC_COPY_VALUES, &is_V); CHKERRV(ierr);
 
-    // ierr = PCFieldSplitSetType(pc, PC_COMPOSITE_GKB); CHKERRV(ierr);
+        PCFieldSplitSetIS(pc, "F", is_F);   
+        PCFieldSplitSetIS(pc, "V", is_V);    
 
-    // PCFieldSplitSetIS(pc, "F", is_F);   
-    // PCFieldSplitSetIS(pc, "V", is_V);    
+        // ierr = PCFieldSplitSetType(pc, PC_COMPOSITE_GKB); CHKERRV(ierr);
+        PCFieldSplitSetType(pc, PC_COMPOSITE_SCHUR);  // or PC_COMPOSITE_MULTIPLICATIVE
+        PCFieldSplitSchurPrecondition(pc, PC_FIELDSPLIT_SCHUR_PRE_SELFP, NULL);  // Or PC_FIELDSPLIT_SCHUR_PRE_A11
 
-    // // Clean up index sets
-    // ierr = ISDestroy(&is_F); CHKERRV(ierr);
-    // ierr = ISDestroy(&is_V); CHKERRV(ierr);
+        // Clean up index sets
+        ierr = ISDestroy(&is_F); CHKERRV(ierr);
+        ierr = ISDestroy(&is_V); CHKERRV(ierr);
+
+    }
+    else{
+        // Detect saddle point structure
+        ierr = PCFieldSplitSetDetectSaddlePoint(pc, PETSC_TRUE); CHKERRV(ierr);
+    }
 
     std::cout << "Set operators" << std::endl;
     ierr = KSPSetFromOptions(ksp); CHKERRV(ierr);
@@ -82,6 +89,7 @@ void alok_arrays(ParticleInfo& pinfo, Consts& consts){
     initialize_radii( pinfo.Np );
     initialize_x0( consts.nm3nc3 ); 
     initialize_up( consts.nm3nc6 );
+    initialize_fext( consts.nm3nc6 );
     // initialize_q( consts.nc4 );
     
     std::cout << "Bookeeping arrays..." << std::endl;
@@ -90,7 +98,8 @@ void alok_arrays(ParticleInfo& pinfo, Consts& consts){
     initialize_pair_types( pinfo.npair );
     initialize_vlist(pinfo.Np-1);
     initialize_bond_list(pinfo.Np, pinfo.nbonds);
-    initialize_id_AA( pinfo.npair_AA ); 
+    initialize_chainid(pinfo.Nm);
+    initialize_id_AA( pinfo.npair_AA , consts.id_rows); 
     initialize_id_AB( pinfo.npair_AB ); 
     initialize_id_BB( pinfo.npair_BB );
     initialize_bondid( consts.id_rows, pinfo.nbonds); 
@@ -128,13 +137,37 @@ void set_vars(ParticleInfo& pinfo, Data& dataStruct, Consts& consts){
     // Set up particle pairs by populating array "id"
     // Read the particle pairs going down a column
     // Define particle pairs and record type index of interaction
+    kk = 0;
+    std::cout << "Setting up chain ids" << std::endl;
+    for( ii = 0; ii < Npoly; ii++){
+        for( jj = 0; jj < Nmono_per_chain; jj++){
+            kk = ii*Nmono_per_chain + jj; 
+            chain_ids[kk] = ii; 
+        }
+    }
+
+    // Print the chain ids
+    for( ii = 0; ii < Nm; ii++){
+        std::cout << "chain_ids[" << ii << "]= " << chain_ids[ii] << std::endl;
+    }
+
+    if( (kk+1) != Nm ){
+        cout << "Number of chain ids does not match number of monomers " << std::endl;
+    }
+
     std::cout << "Setting up particle pairs..." << std::endl;
     kk = 0; 
+    // 2nd index on id_AA records whether the pair belongs to the same chain
     for(ii = 0; ii < Nm; ii++){
         for(jj = ii+1; jj < Nm; jj++){
             id[0][kk] = ii; 
             id[1][kk] = jj; 
-            id_AA[kk] = kk; 
+            id_AA[kk][0] = kk; 
+
+            if(chain_ids[ii] == chain_ids[jj]){
+                id_AA[kk][1] = 1;
+            }
+
             kk += 1;
         }
     }
@@ -181,6 +214,7 @@ void set_vars(ParticleInfo& pinfo, Data& dataStruct, Consts& consts){
     if( kk != nbonds){
         cout << "Number of bonds populated not equal to expected value" << endl;
     }
+
 
     std::cout << "Setting up bond list..." << std::endl;
     // Write the bond list to go from monomer to bond ids 

@@ -111,11 +111,11 @@ void pair_interaction(PetscScalar fext[], Consts& consts, ParticleInfo& pinfo, D
                     // they are accounted in force calcs later
 
                     if( dr < sig ){
-                        std::cout << "dr: " << dr << std::endl;
-                        std::cout << "sig: " << sig << std::endl;
-                        std::cout << "radii[kk]: " << radii[kk] << std::endl;
-                        std::cout << "radii[jj]: " << radii[jj] << std::endl;
-                        std::cout << "type id: " << type_id << std::endl;
+                        // std::cout << "dr: " << dr << std::endl;
+                        // std::cout << "sig: " << sig << std::endl;
+                        // std::cout << "radii[kk]: " << radii[kk] << std::endl;
+                        // std::cout << "radii[jj]: " << radii[jj] << std::endl;
+                        // std::cout << "type id: " << type_id << std::endl;
                         force = sig - dr;
                         fx *= force;
                         fy *= force;
@@ -206,11 +206,11 @@ void pair_interaction(PetscScalar fext[], Consts& consts, ParticleInfo& pinfo, D
                     // fext[jj3+2] += fz;
 
                     if( dr < sig ){
-                        std::cout << "dr: " << dr << std::endl;
-                        std::cout << "sig: " << sig << std::endl;
-                        std::cout << "radii[kk]: " << radii[kk] << std::endl;
-                        std::cout << "radii[jj]: " << radii[jj] << std::endl;
-                        std::cout << "type id: " << type_id << std::endl;
+                        // std::cout << "dr: " << dr << std::endl;
+                        // std::cout << "sig: " << sig << std::endl;
+                        // std::cout << "radii[kk]: " << radii[kk] << std::endl;
+                        // std::cout << "radii[jj]: " << radii[jj] << std::endl;
+                        // std::cout << "type id: " << type_id << std::endl;
 
                         // melrose heyes
                         force = sig - dr;

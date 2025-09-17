@@ -33,10 +33,11 @@ namespace arrays{
     std::vector<std::vector<long double>> pd; 
     std::vector<std::vector<int>> bond_ids;
     std::vector<std::vector<int>> bond_list; 
+    std::vector<int> chain_ids;
     std::vector<std::vector<int>> id;
     std::vector<std::vector<int>> vlist;
     std::vector<int> pair_types;
-    std::vector<int> id_AA; 
+    std::vector<std::vector<int>> id_AA; 
     std::vector<int> id_AB;
     std::vector<int> id_BB;
     std::vector<std::vector<int>> mesid;
@@ -152,6 +153,10 @@ namespace arrays{
         bond_ids.resize(rows, std::vector<int>(cols, 0));
     }
 
+    void initialize_chainid(int size){
+        chain_ids.resize(size, 0.0);
+    }
+
     void initialize_id(int rows, int cols){
         id.resize(rows, std::vector<int>(cols, 0));
     };
@@ -172,8 +177,8 @@ namespace arrays{
         pair_types.resize(size, 0);
     }
     
-    void initialize_id_AA(int size){
-        id_AA.resize(size, 0);
+    void initialize_id_AA(int rows, int cols){
+        id_AA.resize(rows, std::vector<int>(cols, 0));
     }
 
     void initialize_id_AB(int size){
@@ -310,8 +315,13 @@ namespace arrays{
         
         PetscErrorCode ierr;
         PetscInt i, ishift, Istart, Iend;
-        PetscScalar array4[nm3nc11];
-        PetscScalar arrays5T[nm3nc11*nm3nc6];
+        // PetscScalar array4[nm3nc11];
+        // PetscScalar arrays5T[nm3nc11*nm3nc6];
+
+        // Dynamic heap allocation
+        std::vector<PetscScalar> array4(nm3nc11);
+        std::vector<PetscScalar> arrays5T(nm3nc11 * nm3nc6);
+
         PetscInt rowsUF[nm3nc11], colsUF[nm3nc6], colsUFshift[nm3nc6];
         std::iota(rowsUF, rowsUF + nm3nc11, 0);
         std::iota(colsUF, colsUF + nm3nc6, 0);
@@ -328,14 +338,14 @@ namespace arrays{
         ierr = MatZeroEntries(A); CHKERRV(ierr);
 
         // Insert B into A
-        ierr = MatGetValues(B, nm3nc11, rowsUF, nm3nc6, colsUF, arrays5T); CHKERRV(ierr);
-        ierr = MatSetValues(A, nm3nc11, rowsUF, nm3nc6, colsUFshift, arrays5T, INSERT_VALUES); CHKERRV(ierr);
+        ierr = MatGetValues(B, nm3nc11, rowsUF, nm3nc6, colsUF, arrays5T.data()); CHKERRV(ierr);
+        ierr = MatSetValues(A, nm3nc11, rowsUF, nm3nc6, colsUFshift, arrays5T.data(), INSERT_VALUES); CHKERRV(ierr);
 
         // Insert B^T into A
         for( i = 0; i < nm3nc6; i++){
             ishift = i + nm3nc11;
-            MatGetValues(B, nm3nc11, rowsUF, 1, &i, array4);
-            MatSetValues(A, 1, &ishift, nm3nc11, rowsUF, array4, INSERT_VALUES);
+            MatGetValues(B, nm3nc11, rowsUF, 1, &i, array4.data());
+            MatSetValues(A, 1, &ishift, nm3nc11, rowsUF, array4.data(), INSERT_VALUES);
         }
 
     }

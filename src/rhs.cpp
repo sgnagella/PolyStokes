@@ -52,6 +52,10 @@ void trapping_forces(PetscScalar fext[], Consts& consts, Coeffs& coeffs, Particl
     PetscInt& ndimp = consts.ndimp;
     double& ktrap = trapinfo.ktrap;
 
+    if (t> trapinfo.tstop and trapinfo.weaken_trap >=0){
+        ktrap = trapinfo.weaken_trap;
+    }
+
     for( i = Nm; i < Np; i++){
         // std::cout << "in trapping forces i: " << i << std::endl;
         i3 = ndimp * i;         // global colloidal index
@@ -100,7 +104,7 @@ void fene_bond(PetscScalar *r, PetscScalar *f, Consts& consts, ParticleInfo& pin
     return;
 }
 
-void bond_forces(PetscScalar fext[], Consts& consts, ParticleInfo& pinfo){
+void bond_forces(PetscScalar fext[], Consts& consts, ParticleInfo& pinfo, bool fene){
     int ii, jj, kk, ll, k3, j3; 
     PetscScalar f[consts.ndimp], r[consts.ndimp+1];
 
@@ -117,9 +121,14 @@ void bond_forces(PetscScalar fext[], Consts& consts, ParticleInfo& pinfo){
         
         r[3] = sqrt( r[0]*r[0] + r[1]*r[1] + r[2]*r[2] );
 
-        // harmonic_bond(r, f, consts, pinfo);
-        fene_bond(r, f, consts, pinfo);
-
+        if(fene){
+            // std::cout << "using fene bond" << std::endl;
+            fene_bond(r, f, consts, pinfo);
+        }
+        else{
+            // std::cout << "using harmonic bond" << std::endl;
+            harmonic_bond(r,f,consts,pinfo);
+        }
         // std::cout << "Bond forces " << ii << " :" << f[0] << " " << f[1] << " " << f[2] << std::endl;
 
         for( ll = 0; ll < consts.ndimp; ll++){
@@ -150,7 +159,7 @@ void PolyStokes::RHS(){
     
     pair_interaction(fint, consts, pinfo, dataStruct);
     trapping_forces(fint, consts, coeffs, pinfo, trapinfo, timeinfo.t);
-    bond_forces(fint, consts, pinfo);
+    bond_forces(fint, consts, pinfo, fene);
 
     // Print fint
     // std::cout << "fint: " << std::endl;

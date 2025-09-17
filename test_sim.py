@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import sphere_rotation_animation
 import importlib
+import shutil
 importlib.reload(sphere_rotation_animation)
 import PolyStokes
 
@@ -39,9 +40,9 @@ def main(beta=1, check_conf=False):
             bond_ids[1, kk] = ii * N_mono + jj + 1
             kk += 1
     
-    monomer_x0 = 2.8; 3.5
-    r12 = 6; 7  # center-to-center distance between the two particles
-    r0 = 2.8 # equilibrium bond length
+    monomer_x0 = 2.8; 1.7; 2.8; 3.5
+    r12 = 6; 3.5; 2.8; 7  # center-to-center distance between the two particles
+    r0 = 2.8; 2.8; 2.01*beta; 2.8 # equilibrium bond length
     
     poly_pos = np.array([
         [monomer_x0, 0, 0],
@@ -106,6 +107,8 @@ def main(beta=1, check_conf=False):
     data_save_dir = f'data/beta_{beta}'
     data_config_dir = os.path.join(data_save_dir, 'config')
     params_sim['output_dir'] = data_config_dir
+    if os.path.exists(data_config_dir):
+        shutil.rmtree(data_config_dir)
     os.makedirs(data_config_dir, exist_ok=True)
         
     # Write the particle positions to conf.in
@@ -138,16 +141,16 @@ def main(beta=1, check_conf=False):
         pickle.dump(params, f)
     
     # Run the simulation
-    tmax = 2.5; 0.25
-    r0 = 2.8
-    Lmax = 1.1*r0
-    kbond = Lmax**(-2) 
+    tmax = 0.2; 0.1; 2.5; 0.25
+    # r0 = 2.8
+    Lmax = 10*r0; 2.0*r0; 1.1*r0
+    kbond = 0.1; 10; Lmax**(-2) 
     tau = 1000
-    ktrap = 200
+    ktrap = 500
     tstart = 0
-    trun = 2.0; 0.2
+    trun = 0.1;1.0; 0.50; 0.1; 0.25; 2.0; 0.2
     
-    sim = PolyStokes.PolyStokes(dt, samplerate, tmax, data_config_dir, mm_HI=False)
+    sim = PolyStokes.PolyStokes(dt, samplerate, tmax, data_config_dir, mm_HI=False, chain_HI=True, fene=False, record_forces=True)
     
     sim.particle_info(
         Np, 
@@ -165,10 +168,12 @@ def main(beta=1, check_conf=False):
     sim.trap_info(
         ktrap,
         tstart,
-        trun
+        trun, 
+        weaken_trap=-1
     )
     
     sim.initial_configuration(conf)
+    # exit()
     sim.run()
     
     return

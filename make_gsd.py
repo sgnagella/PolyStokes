@@ -82,10 +82,11 @@ def main(beta=1):
     output_file = f"../trajectory.gsd"
     diameters = 2*np.ones(n_particles)
     typeids = np.zeros(n_particles, dtype=int)
-    types = ['A'] * n_particles
+    # types = ['A'] * n_particles # GSD < 2.9.0
+    types = ['A', 'B'] # GSD > 2.9.0
     
     diameters[:N_mono_total] *= beta
-    types[:N_mono_total] = ['B'] * N_mono_total
+    # types[:N_mono_total] = ['B'] * N_mono_total # GSD < 2.9.0
     typeids[:N_mono_total] = 1
     
     L = 60

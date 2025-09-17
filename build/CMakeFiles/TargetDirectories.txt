@@ -1,7 +1,7 @@
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/PolyStokes.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/edit_cache.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/rebuild_cache.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/list_install_components.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/install.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/install/local.dir
-/home/sgnagella/projects/saddle_point_OT_precond_dumbell_nlist_RPY_monomer/build/CMakeFiles/install/strip.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/PolyStokes.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/edit_cache.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/rebuild_cache.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/list_install_components.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/install.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/install/local.dir
+/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/install/strip.dir

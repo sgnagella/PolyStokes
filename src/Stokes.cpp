@@ -8,10 +8,11 @@ using namespace arrays;
 // Initializes the PolyStokes class and defines various constants and parameters
 // for the calculations
 
-PolyStokes::PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir, bool mm_HI)
-    : dt(dt), samplerate(samplerate), tmax(tmax), output_dir(output_dir), mm_HI(mm_HI)
-{
-    timeinfo.t = 0.0;
+PolyStokes::PolyStokes(double dt, int samplerate, double tmax, const std::string& output_dir, bool mm_HI, bool chain_HI, bool fene, bool record_forces, double t)
+    : dt(dt), samplerate(samplerate), tmax(tmax), output_dir(output_dir), mm_HI(mm_HI), chain_HI(chain_HI), fene(fene), record_forces(record_forces), t(t)
+{   
+    std::cout << "using bond force fene: " << fene << std::endl;
+    timeinfo.t = t;
     timeinfo.dt = dt;
     timeinfo.tmax = tmax;
     timeinfo.samplerate = samplerate;
@@ -174,7 +175,7 @@ void PolyStokes::particle_info(int Np, int Nc, int Nm, int Npoly, int Nmono_per_
     std::cout << "r0: " << pinfo.r0 << std::endl;
     std::cout << "Lmax: " << pinfo.Lmax << std::endl;
     std::cout << "tau: " << pinfo.tau << std::endl;
-
+    // std::cout << "fene" << pinfo.fene << std::endl;
 
     pinfo.npair = Np * (Np-1) / 2;
     pinfo.npair_AA = Nm * (Nm-1) / 2;
@@ -211,12 +212,13 @@ void PolyStokes::particle_info(int Np, int Nc, int Nm, int Npoly, int Nmono_per_
 
 }
 
-void PolyStokes::trap_info(double ktrap, double tstart, double trun)
+void PolyStokes::trap_info(double ktrap, double tstart, double trun, double weaken_trap)
 {
     trapinfo.ktrap = ktrap;
     trapinfo.tstart = tstart;
     trapinfo.trun = trun;
     trapinfo.tstop = tstart + trun;
+    trapinfo.weaken_trap = weaken_trap;
 
     if( trapinfo.tstop > timeinfo.tmax ){
         std::cerr << "Simulation time exceeds maximum time" << std::endl;

@@ -29,7 +29,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/PolyStokes.dir/src/vel.cpp.o.d"
   "CMakeFiles/PolyStokes.dir/src/write_configuration.cpp.o"
   "CMakeFiles/PolyStokes.dir/src/write_configuration.cpp.o.d"
-  "PolyStokes.cpython-39-x86_64-linux-gnu.so"
+  "PolyStokes.cpython-312-x86_64-linux-gnu.so"
   "PolyStokes.pdb"
 )
 

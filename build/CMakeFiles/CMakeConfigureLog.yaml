@@ -1,0 +1,456 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Linux - 3.10.0-1160.119.1.el7.tuxcare.els14.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /share/software/user/open/gcc/10.1.0/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/3.31.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0"
+      binary: "/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0'
+        
+        Run Build Command(s): /share/software/user/open/cmake/3.31.4/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_01267/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_01267.dir/build.make CMakeFiles/cmTC_01267.dir/build
+        gmake[1]: Entering directory `/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0'
+        Building CXX object CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o
+        /share/software/user/open/gcc/10.1.0/bin/c++   -v -o CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -c /share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/share/software/user/open/gcc/10.1.0/bin/c++
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc-10.1.0/configure --prefix=/share/software/user/open/gcc/10.1.0/ --enable-languages=c,c++,fortran,go --disable-multilib
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.1.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/cc1plus -quiet -v -D_GNU_SOURCE /share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cccUUlcl.s
+        GNU C++14 (GCC) version 10.1.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.1.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/share/software/user/open/gcc/10.1.0/include"
+          as it is a non-system directory that duplicates a system directory
+        ignoring duplicate directory "/share/software/user/open/cuda/12.6.1/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /share/software/user/open/openblas/0.3.10/include
+         /share/software/user/open/boost/1.87.0/include
+         /share/software/user/open/icu/59.1/include
+         /share/software/user/open/openmpi/5.0.5/include
+         /share/software/user/open/ucc/1.3.0/include
+         /share/software/user/open/nccl/2.23.4/include
+         /share/software/user/open/ucx/1.17.0/include
+         /share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include
+         /share/software/user/open/cuda/12.6.1/nvvm/include
+         /share/software/user/open/cuda/12.6.1/extras/Debugger/include
+         /share/software/user/open/cuda/12.6.1/extras/CUPTI/include
+         /share/software/user/open/python/3.12.1/include/python3.12
+         /share/software/user/open/python/3.12.1/include
+         /share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include
+         /share/software/user/open/sqlite/3.44.2/include
+         /share/software/user/open/readline/8.2/include
+         /share/software/user/open/ncurses/6.4/include
+         /share/software/user/open/tcltk/8.6.6/include
+         /share/software/user/open/openssl/3.0.7/include
+         /share/software/user/open/zlib/1.2.11/include
+         /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0
+         /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu
+         /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward
+         /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include
+         /usr/local/include
+         /share/software/user/open/gcc/10.1.0/include
+         /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed
+         /usr/include
+        End of search list.
+        GNU C++14 (GCC) version 10.1.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.1.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 713e758d311116246a386bdfee426bb6
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccUUlcl.s
+        GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1.tuxcare.els1
+        COMPILER_PATH=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/share/software/user/open/gcc/10.1.0/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/../lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64/:/share/software/user/open/libffi/3.2.1/lib64/../lib64/:/share/software/user/open/openssl/3.0.7/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/share/software/user/open/openblas/0.3.10/lib/:/share/software/user/open/gcc/10.1.0/lib64/:/share/software/user/open/gcc/10.1.0/lib/:/share/software/user/open/boost/1.87.0/lib/:/share/software/user/open/icu/59.1/lib/:/share/software/user/open/openmpi/5.0.5/lib/:/share/software/user/open/ucc/1.3.0/lib/:/share/software/user/open/nccl/2.23.4/lib/:/share/software/user/open/ucx/1.17.0/lib/:/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib/:/share/software/user/open/cuda/12.6.1/lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/:/share/software/user/open/python/3.12.1/lib/:/share/software/user/open/libffi/3.2.1/lib64/:/share/software/user/open/sqlite/3.44.2/lib/:/share/software/user/open/readline/8.2/lib/:/share/software/user/open/ncurses/6.4/lib/:/share/software/user/open/tcltk/8.6.6/lib/:/share/software/user/open/openssl/3.0.7/lib64/:/share/software/user/open/zlib/1.2.11/lib/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_01267
+        /share/software/user/open/cmake/3.31.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01267.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/share/software/user/open/gcc/10.1.0/bin/c++
+        COLLECT_LTO_WRAPPER=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc-10.1.0/configure --prefix=/share/software/user/open/gcc/10.1.0/ --enable-languages=c,c++,fortran,go --disable-multilib
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.1.0 (GCC) 
+        COMPILER_PATH=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/share/software/user/open/gcc/10.1.0/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/../lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64/:/share/software/user/open/libffi/3.2.1/lib64/../lib64/:/share/software/user/open/openssl/3.0.7/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/share/software/user/open/openblas/0.3.10/lib/:/share/software/user/open/gcc/10.1.0/lib64/:/share/software/user/open/gcc/10.1.0/lib/:/share/software/user/open/boost/1.87.0/lib/:/share/software/user/open/icu/59.1/lib/:/share/software/user/open/openmpi/5.0.5/lib/:/share/software/user/open/ucc/1.3.0/lib/:/share/software/user/open/nccl/2.23.4/lib/:/share/software/user/open/ucx/1.17.0/lib/:/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib/:/share/software/user/open/cuda/12.6.1/lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/:/share/software/user/open/python/3.12.1/lib/:/share/software/user/open/libffi/3.2.1/lib64/:/share/software/user/open/sqlite/3.44.2/lib/:/share/software/user/open/readline/8.2/lib/:/share/software/user/open/ncurses/6.4/lib/:/share/software/user/open/tcltk/8.6.6/lib/:/share/software/user/open/openssl/3.0.7/lib64/:/share/software/user/open/zlib/1.2.11/lib/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01267' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/collect2 -plugin /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/liblto_plugin.so -plugin-opt=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4NDk8r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_01267 /lib/../lib64/crt1.o /lib/../lib64/crti.o /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o -L/share/software/user/open/gcc/10.1.0/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/../lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64 -L/share/software/user/open/libffi/3.2.1/lib64/../lib64 -L/share/software/user/open/openssl/3.0.7/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/share/software/user/open/openblas/0.3.10/lib -L/share/software/user/open/gcc/10.1.0/lib64 -L/share/software/user/open/gcc/10.1.0/lib -L/share/software/user/open/boost/1.87.0/lib -L/share/software/user/open/icu/59.1/lib -L/share/software/user/open/openmpi/5.0.5/lib -L/share/software/user/open/ucc/1.3.0/lib -L/share/software/user/open/nccl/2.23.4/lib -L/share/software/user/open/ucx/1.17.0/lib -L/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib -L/share/software/user/open/cuda/12.6.1/lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64 -L/share/software/user/open/python/3.12.1/lib -L/share/software/user/open/libffi/3.2.1/lib64 -L/share/software/user/open/sqlite/3.44.2/lib -L/share/software/user/open/readline/8.2/lib -L/share/software/user/open/ncurses/6.4/lib -L/share/software/user/open/tcltk/8.6.6/lib -L/share/software/user/open/openssl/3.0.7/lib64 -L/share/software/user/open/zlib/1.2.11/lib -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../.. -v CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o /lib/../lib64/crtn.o
+        collect2 version 10.1.0
+        /usr/bin/ld -plugin /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/liblto_plugin.so -plugin-opt=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4NDk8r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_01267 /lib/../lib64/crt1.o /lib/../lib64/crti.o /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o -L/share/software/user/open/gcc/10.1.0/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/../lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64 -L/share/software/user/open/libffi/3.2.1/lib64/../lib64 -L/share/software/user/open/openssl/3.0.7/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/share/software/user/open/openblas/0.3.10/lib -L/share/software/user/open/gcc/10.1.0/lib64 -L/share/software/user/open/gcc/10.1.0/lib -L/share/software/user/open/boost/1.87.0/lib -L/share/software/user/open/icu/59.1/lib -L/share/software/user/open/openmpi/5.0.5/lib -L/share/software/user/open/ucc/1.3.0/lib -L/share/software/user/open/nccl/2.23.4/lib -L/share/software/user/open/ucx/1.17.0/lib -L/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib -L/share/software/user/open/cuda/12.6.1/lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64 -L/share/software/user/open/python/3.12.1/lib -L/share/software/user/open/libffi/3.2.1/lib64 -L/share/software/user/open/sqlite/3.44.2/lib -L/share/software/user/open/readline/8.2/lib -L/share/software/user/open/ncurses/6.4/lib -L/share/software/user/open/tcltk/8.6.6/lib -L/share/software/user/open/openssl/3.0.7/lib64 -L/share/software/user/open/zlib/1.2.11/lib -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../.. -v CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o /lib/../lib64/crtn.o
+        GNU ld version 2.27-44.base.el7_9.1.tuxcare.els1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01267' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        /share/software/user/open/gcc/10.1.0/bin/c++  -v -Wl,-v CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_01267
+        gmake[1]: Leaving directory `/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/share/software/user/open/openblas/0.3.10/include]
+          add: [/share/software/user/open/boost/1.87.0/include]
+          add: [/share/software/user/open/icu/59.1/include]
+          add: [/share/software/user/open/openmpi/5.0.5/include]
+          add: [/share/software/user/open/ucc/1.3.0/include]
+          add: [/share/software/user/open/nccl/2.23.4/include]
+          add: [/share/software/user/open/ucx/1.17.0/include]
+          add: [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include]
+          add: [/share/software/user/open/cuda/12.6.1/nvvm/include]
+          add: [/share/software/user/open/cuda/12.6.1/extras/Debugger/include]
+          add: [/share/software/user/open/cuda/12.6.1/extras/CUPTI/include]
+          add: [/share/software/user/open/python/3.12.1/include/python3.12]
+          add: [/share/software/user/open/python/3.12.1/include]
+          add: [/share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include]
+          add: [/share/software/user/open/sqlite/3.44.2/include]
+          add: [/share/software/user/open/readline/8.2/include]
+          add: [/share/software/user/open/ncurses/6.4/include]
+          add: [/share/software/user/open/tcltk/8.6.6/include]
+          add: [/share/software/user/open/openssl/3.0.7/include]
+          add: [/share/software/user/open/zlib/1.2.11/include]
+          add: [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0]
+          add: [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu]
+          add: [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward]
+          add: [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include]
+          add: [/usr/local/include]
+          add: [/share/software/user/open/gcc/10.1.0/include]
+          add: [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/share/software/user/open/openblas/0.3.10/include] ==> [/share/software/user/open/openblas/0.3.10/include]
+        collapse include dir [/share/software/user/open/boost/1.87.0/include] ==> [/share/software/user/open/boost/1.87.0/include]
+        collapse include dir [/share/software/user/open/icu/59.1/include] ==> [/share/software/user/open/icu/59.1/include]
+        collapse include dir [/share/software/user/open/openmpi/5.0.5/include] ==> [/share/software/user/open/openmpi/5.0.5/include]
+        collapse include dir [/share/software/user/open/ucc/1.3.0/include] ==> [/share/software/user/open/ucc/1.3.0/include]
+        collapse include dir [/share/software/user/open/nccl/2.23.4/include] ==> [/share/software/user/open/nccl/2.23.4/include]
+        collapse include dir [/share/software/user/open/ucx/1.17.0/include] ==> [/share/software/user/open/ucx/1.17.0/include]
+        collapse include dir [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include] ==> [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include]
+        collapse include dir [/share/software/user/open/cuda/12.6.1/nvvm/include] ==> [/share/software/user/open/cuda/12.6.1/nvvm/include]
+        collapse include dir [/share/software/user/open/cuda/12.6.1/extras/Debugger/include] ==> [/share/software/user/open/cuda/12.6.1/extras/Debugger/include]
+        collapse include dir [/share/software/user/open/cuda/12.6.1/extras/CUPTI/include] ==> [/share/software/user/open/cuda/12.6.1/extras/CUPTI/include]
+        collapse include dir [/share/software/user/open/python/3.12.1/include/python3.12] ==> [/share/software/user/open/python/3.12.1/include/python3.12]
+        collapse include dir [/share/software/user/open/python/3.12.1/include] ==> [/share/software/user/open/python/3.12.1/include]
+        collapse include dir [/share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include] ==> [/share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include]
+        collapse include dir [/share/software/user/open/sqlite/3.44.2/include] ==> [/share/software/user/open/sqlite/3.44.2/include]
+        collapse include dir [/share/software/user/open/readline/8.2/include] ==> [/share/software/user/open/readline/8.2/include]
+        collapse include dir [/share/software/user/open/ncurses/6.4/include] ==> [/share/software/user/open/ncurses/6.4/include]
+        collapse include dir [/share/software/user/open/tcltk/8.6.6/include] ==> [/share/software/user/open/tcltk/8.6.6/include]
+        collapse include dir [/share/software/user/open/openssl/3.0.7/include] ==> [/share/software/user/open/openssl/3.0.7/include]
+        collapse include dir [/share/software/user/open/zlib/1.2.11/include] ==> [/share/software/user/open/zlib/1.2.11/include]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0] ==> [/share/software/user/open/gcc/10.1.0/include/c++/10.1.0]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu] ==> [/share/software/user/open/gcc/10.1.0/include/c++/10.1.0/x86_64-pc-linux-gnu]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward] ==> [/share/software/user/open/gcc/10.1.0/include/c++/10.1.0/backward]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include] ==> [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/include] ==> [/share/software/user/open/gcc/10.1.0/include]
+        collapse include dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed] ==> [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/share/software/user/open/openblas/0.3.10/include;/share/software/user/open/boost/1.87.0/include;/share/software/user/open/icu/59.1/include;/share/software/user/open/openmpi/5.0.5/include;/share/software/user/open/ucc/1.3.0/include;/share/software/user/open/nccl/2.23.4/include;/share/software/user/open/ucx/1.17.0/include;/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include;/share/software/user/open/cuda/12.6.1/nvvm/include;/share/software/user/open/cuda/12.6.1/extras/Debugger/include;/share/software/user/open/cuda/12.6.1/extras/CUPTI/include;/share/software/user/open/python/3.12.1/include/python3.12;/share/software/user/open/python/3.12.1/include;/share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include;/share/software/user/open/sqlite/3.44.2/include;/share/software/user/open/readline/8.2/include;/share/software/user/open/ncurses/6.4/include;/share/software/user/open/tcltk/8.6.6/include;/share/software/user/open/openssl/3.0.7/include;/share/software/user/open/zlib/1.2.11/include;/share/software/user/open/gcc/10.1.0/include/c++/10.1.0;/share/software/user/open/gcc/10.1.0/include/c++/10.1.0/x86_64-pc-linux-gnu;/share/software/user/open/gcc/10.1.0/include/c++/10.1.0/backward;/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include;/usr/local/include;/share/software/user/open/gcc/10.1.0/include;/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0']
+        ignore line: []
+        ignore line: [Run Build Command(s): /share/software/user/open/cmake/3.31.4/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_01267/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_01267.dir/build.make CMakeFiles/cmTC_01267.dir/build]
+        ignore line: [gmake[1]: Entering directory `/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-INGuJ0']
+        ignore line: [Building CXX object CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/share/software/user/open/gcc/10.1.0/bin/c++   -v -o CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -c /share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/share/software/user/open/gcc/10.1.0/bin/c++]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc-10.1.0/configure --prefix=/share/software/user/open/gcc/10.1.0/ --enable-languages=c c++ fortran go --disable-multilib]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.1.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/cc1plus -quiet -v -D_GNU_SOURCE /share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cccUUlcl.s]
+        ignore line: [GNU C++14 (GCC) version 10.1.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/share/software/user/open/gcc/10.1.0/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [ignoring duplicate directory "/share/software/user/open/cuda/12.6.1/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /share/software/user/open/openblas/0.3.10/include]
+        ignore line: [ /share/software/user/open/boost/1.87.0/include]
+        ignore line: [ /share/software/user/open/icu/59.1/include]
+        ignore line: [ /share/software/user/open/openmpi/5.0.5/include]
+        ignore line: [ /share/software/user/open/ucc/1.3.0/include]
+        ignore line: [ /share/software/user/open/nccl/2.23.4/include]
+        ignore line: [ /share/software/user/open/ucx/1.17.0/include]
+        ignore line: [ /share/software/user/open/cuda/12.6.1/targets/x86_64-linux/include]
+        ignore line: [ /share/software/user/open/cuda/12.6.1/nvvm/include]
+        ignore line: [ /share/software/user/open/cuda/12.6.1/extras/Debugger/include]
+        ignore line: [ /share/software/user/open/cuda/12.6.1/extras/CUPTI/include]
+        ignore line: [ /share/software/user/open/python/3.12.1/include/python3.12]
+        ignore line: [ /share/software/user/open/python/3.12.1/include]
+        ignore line: [ /share/software/user/open/libffi/3.2.1/lib/libffi-3.2.1/include]
+        ignore line: [ /share/software/user/open/sqlite/3.44.2/include]
+        ignore line: [ /share/software/user/open/readline/8.2/include]
+        ignore line: [ /share/software/user/open/ncurses/6.4/include]
+        ignore line: [ /share/software/user/open/tcltk/8.6.6/include]
+        ignore line: [ /share/software/user/open/openssl/3.0.7/include]
+        ignore line: [ /share/software/user/open/zlib/1.2.11/include]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/include]
+        ignore line: [ /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 10.1.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 713e758d311116246a386bdfee426bb6]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccUUlcl.s]
+        ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1.tuxcare.els1]
+        ignore line: [COMPILER_PATH=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/share/software/user/open/gcc/10.1.0/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/../lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64/:/share/software/user/open/libffi/3.2.1/lib64/../lib64/:/share/software/user/open/openssl/3.0.7/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/share/software/user/open/openblas/0.3.10/lib/:/share/software/user/open/gcc/10.1.0/lib64/:/share/software/user/open/gcc/10.1.0/lib/:/share/software/user/open/boost/1.87.0/lib/:/share/software/user/open/icu/59.1/lib/:/share/software/user/open/openmpi/5.0.5/lib/:/share/software/user/open/ucc/1.3.0/lib/:/share/software/user/open/nccl/2.23.4/lib/:/share/software/user/open/ucx/1.17.0/lib/:/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib/:/share/software/user/open/cuda/12.6.1/lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/:/share/software/user/open/python/3.12.1/lib/:/share/software/user/open/libffi/3.2.1/lib64/:/share/software/user/open/sqlite/3.44.2/lib/:/share/software/user/open/readline/8.2/lib/:/share/software/user/open/ncurses/6.4/lib/:/share/software/user/open/tcltk/8.6.6/lib/:/share/software/user/open/openssl/3.0.7/lib64/:/share/software/user/open/zlib/1.2.11/lib/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_01267]
+        ignore line: [/share/software/user/open/cmake/3.31.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01267.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/share/software/user/open/gcc/10.1.0/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc-10.1.0/configure --prefix=/share/software/user/open/gcc/10.1.0/ --enable-languages=c c++ fortran go --disable-multilib]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.1.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/share/software/user/open/gcc/10.1.0/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/../lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64/:/share/software/user/open/libffi/3.2.1/lib64/../lib64/:/share/software/user/open/openssl/3.0.7/lib64/../lib64/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/share/software/user/open/openblas/0.3.10/lib/:/share/software/user/open/gcc/10.1.0/lib64/:/share/software/user/open/gcc/10.1.0/lib/:/share/software/user/open/boost/1.87.0/lib/:/share/software/user/open/icu/59.1/lib/:/share/software/user/open/openmpi/5.0.5/lib/:/share/software/user/open/ucc/1.3.0/lib/:/share/software/user/open/nccl/2.23.4/lib/:/share/software/user/open/ucx/1.17.0/lib/:/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib/:/share/software/user/open/cuda/12.6.1/lib64/:/share/software/user/open/cuda/12.6.1/nvvm/lib64/:/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/:/share/software/user/open/python/3.12.1/lib/:/share/software/user/open/libffi/3.2.1/lib64/:/share/software/user/open/sqlite/3.44.2/lib/:/share/software/user/open/readline/8.2/lib/:/share/software/user/open/ncurses/6.4/lib/:/share/software/user/open/tcltk/8.6.6/lib/:/share/software/user/open/openssl/3.0.7/lib64/:/share/software/user/open/zlib/1.2.11/lib/:/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01267' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/collect2 -plugin /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/liblto_plugin.so -plugin-opt=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4NDk8r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_01267 /lib/../lib64/crt1.o /lib/../lib64/crti.o /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o -L/share/software/user/open/gcc/10.1.0/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/../lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64 -L/share/software/user/open/libffi/3.2.1/lib64/../lib64 -L/share/software/user/open/openssl/3.0.7/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/share/software/user/open/openblas/0.3.10/lib -L/share/software/user/open/gcc/10.1.0/lib64 -L/share/software/user/open/gcc/10.1.0/lib -L/share/software/user/open/boost/1.87.0/lib -L/share/software/user/open/icu/59.1/lib -L/share/software/user/open/openmpi/5.0.5/lib -L/share/software/user/open/ucc/1.3.0/lib -L/share/software/user/open/nccl/2.23.4/lib -L/share/software/user/open/ucx/1.17.0/lib -L/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib -L/share/software/user/open/cuda/12.6.1/lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64 -L/share/software/user/open/python/3.12.1/lib -L/share/software/user/open/libffi/3.2.1/lib64 -L/share/software/user/open/sqlite/3.44.2/lib -L/share/software/user/open/readline/8.2/lib -L/share/software/user/open/ncurses/6.4/lib -L/share/software/user/open/tcltk/8.6.6/lib -L/share/software/user/open/openssl/3.0.7/lib64 -L/share/software/user/open/zlib/1.2.11/lib -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../.. -v CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc4NDk8r.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_01267] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o] ==> obj [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib64/../lib64] ==> dir [/share/software/user/open/gcc/10.1.0/lib64/../lib64]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib/../lib64] ==> dir [/share/software/user/open/gcc/10.1.0/lib/../lib64]
+          arg [-L/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64] ==> dir [/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64]
+          arg [-L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64] ==> dir [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64]
+          arg [-L/share/software/user/open/libffi/3.2.1/lib64/../lib64] ==> dir [/share/software/user/open/libffi/3.2.1/lib64/../lib64]
+          arg [-L/share/software/user/open/openssl/3.0.7/lib64/../lib64] ==> dir [/share/software/user/open/openssl/3.0.7/lib64/../lib64]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0] ==> dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64] ==> dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/share/software/user/open/openblas/0.3.10/lib] ==> dir [/share/software/user/open/openblas/0.3.10/lib]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib64] ==> dir [/share/software/user/open/gcc/10.1.0/lib64]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib] ==> dir [/share/software/user/open/gcc/10.1.0/lib]
+          arg [-L/share/software/user/open/boost/1.87.0/lib] ==> dir [/share/software/user/open/boost/1.87.0/lib]
+          arg [-L/share/software/user/open/icu/59.1/lib] ==> dir [/share/software/user/open/icu/59.1/lib]
+          arg [-L/share/software/user/open/openmpi/5.0.5/lib] ==> dir [/share/software/user/open/openmpi/5.0.5/lib]
+          arg [-L/share/software/user/open/ucc/1.3.0/lib] ==> dir [/share/software/user/open/ucc/1.3.0/lib]
+          arg [-L/share/software/user/open/nccl/2.23.4/lib] ==> dir [/share/software/user/open/nccl/2.23.4/lib]
+          arg [-L/share/software/user/open/ucx/1.17.0/lib] ==> dir [/share/software/user/open/ucx/1.17.0/lib]
+          arg [-L/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib] ==> dir [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib]
+          arg [-L/share/software/user/open/cuda/12.6.1/lib64] ==> dir [/share/software/user/open/cuda/12.6.1/lib64]
+          arg [-L/share/software/user/open/cuda/12.6.1/nvvm/lib64] ==> dir [/share/software/user/open/cuda/12.6.1/nvvm/lib64]
+          arg [-L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64] ==> dir [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64]
+          arg [-L/share/software/user/open/python/3.12.1/lib] ==> dir [/share/software/user/open/python/3.12.1/lib]
+          arg [-L/share/software/user/open/libffi/3.2.1/lib64] ==> dir [/share/software/user/open/libffi/3.2.1/lib64]
+          arg [-L/share/software/user/open/sqlite/3.44.2/lib] ==> dir [/share/software/user/open/sqlite/3.44.2/lib]
+          arg [-L/share/software/user/open/readline/8.2/lib] ==> dir [/share/software/user/open/readline/8.2/lib]
+          arg [-L/share/software/user/open/ncurses/6.4/lib] ==> dir [/share/software/user/open/ncurses/6.4/lib]
+          arg [-L/share/software/user/open/tcltk/8.6.6/lib] ==> dir [/share/software/user/open/tcltk/8.6.6/lib]
+          arg [-L/share/software/user/open/openssl/3.0.7/lib64] ==> dir [/share/software/user/open/openssl/3.0.7/lib64]
+          arg [-L/share/software/user/open/zlib/1.2.11/lib] ==> dir [/share/software/user/open/zlib/1.2.11/lib]
+          arg [-L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../..] ==> dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o] ==> obj [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 10.1.0]
+        ignore line: [/usr/bin/ld -plugin /share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/liblto_plugin.so -plugin-opt=/share/software/user/open/gcc/10.1.0/libexec/gcc/x86_64-pc-linux-gnu/10.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4NDk8r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_01267 /lib/../lib64/crt1.o /lib/../lib64/crti.o /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o -L/share/software/user/open/gcc/10.1.0/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/../lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64 -L/share/software/user/open/libffi/3.2.1/lib64/../lib64 -L/share/software/user/open/openssl/3.0.7/lib64/../lib64 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0 -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/share/software/user/open/openblas/0.3.10/lib -L/share/software/user/open/gcc/10.1.0/lib64 -L/share/software/user/open/gcc/10.1.0/lib -L/share/software/user/open/boost/1.87.0/lib -L/share/software/user/open/icu/59.1/lib -L/share/software/user/open/openmpi/5.0.5/lib -L/share/software/user/open/ucc/1.3.0/lib -L/share/software/user/open/nccl/2.23.4/lib -L/share/software/user/open/ucx/1.17.0/lib -L/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib -L/share/software/user/open/cuda/12.6.1/lib64 -L/share/software/user/open/cuda/12.6.1/nvvm/lib64 -L/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64 -L/share/software/user/open/python/3.12.1/lib -L/share/software/user/open/libffi/3.2.1/lib64 -L/share/software/user/open/sqlite/3.44.2/lib -L/share/software/user/open/readline/8.2/lib -L/share/software/user/open/ncurses/6.4/lib -L/share/software/user/open/tcltk/8.6.6/lib -L/share/software/user/open/openssl/3.0.7/lib64 -L/share/software/user/open/zlib/1.2.11/lib -L/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../.. -v CMakeFiles/cmTC_01267.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o /lib/../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib64/../lib64] ==> [/share/software/user/open/gcc/10.1.0/lib64]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib/../lib64] ==> [/share/software/user/open/gcc/10.1.0/lib64]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/nvvm/lib64/../lib64] ==> [/share/software/user/open/cuda/12.6.1/nvvm/lib64]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64/../lib64] ==> [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64]
+        collapse library dir [/share/software/user/open/libffi/3.2.1/lib64/../lib64] ==> [/share/software/user/open/libffi/3.2.1/lib64]
+        collapse library dir [/share/software/user/open/openssl/3.0.7/lib64/../lib64] ==> [/share/software/user/open/openssl/3.0.7/lib64]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0] ==> [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64] ==> [/share/software/user/open/gcc/10.1.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/share/software/user/open/openblas/0.3.10/lib] ==> [/share/software/user/open/openblas/0.3.10/lib]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib64] ==> [/share/software/user/open/gcc/10.1.0/lib64]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib] ==> [/share/software/user/open/gcc/10.1.0/lib]
+        collapse library dir [/share/software/user/open/boost/1.87.0/lib] ==> [/share/software/user/open/boost/1.87.0/lib]
+        collapse library dir [/share/software/user/open/icu/59.1/lib] ==> [/share/software/user/open/icu/59.1/lib]
+        collapse library dir [/share/software/user/open/openmpi/5.0.5/lib] ==> [/share/software/user/open/openmpi/5.0.5/lib]
+        collapse library dir [/share/software/user/open/ucc/1.3.0/lib] ==> [/share/software/user/open/ucc/1.3.0/lib]
+        collapse library dir [/share/software/user/open/nccl/2.23.4/lib] ==> [/share/software/user/open/nccl/2.23.4/lib]
+        collapse library dir [/share/software/user/open/ucx/1.17.0/lib] ==> [/share/software/user/open/ucx/1.17.0/lib]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib] ==> [/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/lib64] ==> [/share/software/user/open/cuda/12.6.1/lib64]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/nvvm/lib64] ==> [/share/software/user/open/cuda/12.6.1/nvvm/lib64]
+        collapse library dir [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64] ==> [/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64]
+        collapse library dir [/share/software/user/open/python/3.12.1/lib] ==> [/share/software/user/open/python/3.12.1/lib]
+        collapse library dir [/share/software/user/open/libffi/3.2.1/lib64] ==> [/share/software/user/open/libffi/3.2.1/lib64]
+        collapse library dir [/share/software/user/open/sqlite/3.44.2/lib] ==> [/share/software/user/open/sqlite/3.44.2/lib]
+        collapse library dir [/share/software/user/open/readline/8.2/lib] ==> [/share/software/user/open/readline/8.2/lib]
+        collapse library dir [/share/software/user/open/ncurses/6.4/lib] ==> [/share/software/user/open/ncurses/6.4/lib]
+        collapse library dir [/share/software/user/open/tcltk/8.6.6/lib] ==> [/share/software/user/open/tcltk/8.6.6/lib]
+        collapse library dir [/share/software/user/open/openssl/3.0.7/lib64] ==> [/share/software/user/open/openssl/3.0.7/lib64]
+        collapse library dir [/share/software/user/open/zlib/1.2.11/lib] ==> [/share/software/user/open/zlib/1.2.11/lib]
+        collapse library dir [/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../..] ==> [/share/software/user/open/gcc/10.1.0/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtbegin.o;/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/share/software/user/open/gcc/10.1.0/lib64;/share/software/user/open/cuda/12.6.1/nvvm/lib64;/share/software/user/open/cuda/12.6.1/extras/CUPTI/lib64;/share/software/user/open/libffi/3.2.1/lib64;/share/software/user/open/openssl/3.0.7/lib64;/share/software/user/open/gcc/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0;/lib64;/usr/lib64;/share/software/user/open/openblas/0.3.10/lib;/share/software/user/open/gcc/10.1.0/lib;/share/software/user/open/boost/1.87.0/lib;/share/software/user/open/icu/59.1/lib;/share/software/user/open/openmpi/5.0.5/lib;/share/software/user/open/ucc/1.3.0/lib;/share/software/user/open/nccl/2.23.4/lib;/share/software/user/open/ucx/1.17.0/lib;/share/software/user/open/cuda/12.6.1/targets/x86_64-linux/lib;/share/software/user/open/cuda/12.6.1/lib64;/share/software/user/open/python/3.12.1/lib;/share/software/user/open/sqlite/3.44.2/lib;/share/software/user/open/readline/8.2/lib;/share/software/user/open/ncurses/6.4/lib;/share/software/user/open/tcltk/8.6.6/lib;/share/software/user/open/zlib/1.2.11/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.27-44.base.el7_9.1.tuxcare.els1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/share/software/user/open/cmake/3.31.4/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/home/groups/stakator/snagella/miniconda3/envs/polystokes/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:323 (check_cxx_compiler_flag)"
+      - "/home/groups/stakator/snagella/miniconda3/envs/polystokes/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:368 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/home/groups/stakator/snagella/miniconda3/envs/polystokes/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:435 (_pybind11_generate_lto)"
+      - "/home/groups/stakator/snagella/miniconda3/envs/polystokes/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:250 (include)"
+      - "CMakeLists.txt:26 (find_package)"
+    checks:
+      - "Performing Test HAS_FLTO"
+    directories:
+      source: "/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt"
+      binary: "/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: ""
+    buildResult:
+      variable: "HAS_FLTO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt'
+        
+        Run Build Command(s): /share/software/user/open/cmake/3.31.4/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_12d65/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_12d65.dir/build.make CMakeFiles/cmTC_12d65.dir/build
+        gmake[1]: Entering directory `/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt'
+        Building CXX object CMakeFiles/cmTC_12d65.dir/src.cxx.o
+        /share/software/user/open/gcc/10.1.0/bin/c++ -DHAS_FLTO  -std=gnu++11   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_12d65.dir/src.cxx.o -c /home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt/src.cxx
+        Linking CXX executable cmTC_12d65
+        /share/software/user/open/cmake/3.31.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12d65.dir/link.txt --verbose=1
+        /share/software/user/open/gcc/10.1.0/bin/c++ CMakeFiles/cmTC_12d65.dir/src.cxx.o -o cmTC_12d65  -flto
+        gmake[1]: Leaving directory `/home/groups/stakator/snagella/polystokes_v3/build/CMakeFiles/CMakeScratch/TryCompile-sG7kRt'
+        
+      exitCode: 0
+...

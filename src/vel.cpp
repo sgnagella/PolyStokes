@@ -68,6 +68,9 @@ void PolyStokes::new_vel(){
     const PetscScalar *X_array;
     VecGetArrayRead(X, &X_array);
     memcpy(up.data(), &X_array[consts.nm3nc11], consts.PetscScalarSize);
+    if(record_forces){
+        memcpy(fext.data(), X_array, consts.nm3nc6 * sizeof(PetscScalar));
+    }
     // Print the elements of up
     // std::cout << "up: " << std::endl;
     // for(i = 0; i < consts.nm3nc6; i++){

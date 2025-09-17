@@ -24,6 +24,7 @@ struct ParticleInfo{
     double kbond;
     double Lmax; 
     double tau;
+    bool fene;
 }; 
 
 struct Consts{
@@ -64,6 +65,7 @@ struct TrapInfo{
     PetscScalar tstart; 
     PetscScalar trun;
     PetscScalar tstop;
+    PetscScalar weaken_trap;
 }; 
 
 struct TimeInfo{
