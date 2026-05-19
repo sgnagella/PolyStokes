@@ -1,7 +1,7 @@
 <div align="center">
   <img src="renderings/Winding_1_.gif" alt="Polymer winding simulation" width="600"/>
   <br/>
-  <em>Two optically trapped colloidal probes winding polymer chains in a Stokesian dynamics simulation</em>
+  <em>Two optically trapped colloidal probes winding polymer chains in a Stokesian dynamics simulation. Yellow lines highlight bond connections aomng monomeric beads and do not have physical volume. </em>
 </div>
 
 ---
