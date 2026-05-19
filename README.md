@@ -14,12 +14,10 @@ A C++ Stokesian dynamics simulator with Python bindings for modeling the hydrody
 
 ## Features
 
-- Full many-body hydrodynamic interactions via the Rotne-Prager-Yamakawa (RPY) tensor
-- Near-field lubrication corrections
+- Full many-body hydrodynamic interactions
 - FENE and harmonic spring bond models
 - Configurable HI: monomer-monomer, inter-chain only, or none
 - Moving optical trap with configurable on/off timing
-- Trajectory output compatible with [GSD](https://gsd.readthedocs.io/) for visualization in [OVITO](https://www.ovito.org/)
 
 ## Requirements
 
@@ -97,5 +95,4 @@ python make_gsd.py
 src/           C++ source and headers
 test_sim.py    Example simulation script
 make_gsd.py    Convert output trajectories to GSD format
-renderings/    Animation outputs
 ```
